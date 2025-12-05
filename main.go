@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/fatih/color"
+)
+
+func GetMessage() string {
+	return "Hello, CI/CD World!"
+}
 
 func main() {
-	fmt.Println("Hello, CI/CD World!")
+	c := color.New(color.FgCyan, color.Bold)
+	c.Println(GetMessage())
+	fmt.Println("Application started successfully.")
 }

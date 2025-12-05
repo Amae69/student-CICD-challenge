@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: student-ci-challenge
-        image: YOUR_DOCKERHUB_USERNAME/student-ci-challenge:main
+        image: krizeal/my-repo:go-app_v1.0
         imagePullPolicy: Always
         resources:
           limits:

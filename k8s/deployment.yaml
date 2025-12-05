@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-ci-challenge
+  labels:
+    app: student-ci-challenge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-ci-challenge
+  template:
+    metadata:
+      labels:
+        app: student-ci-challenge
+    spec:
+      containers:
+      - name: student-ci-challenge
+        image: YOUR_DOCKERHUB_USERNAME/student-ci-challenge:main
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: student-ci-challenge
+spec:
+  selector:
+    app: student-ci-challenge
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

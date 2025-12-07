@@ -18,6 +18,8 @@ spec:
       - name: student-ci-challenge
         image: krizeal/my-repo:go-app_v2.0
         imagePullPolicy: Always
+      imagePullSecrets:
+      - name: regcred
         resources:
           limits:
             memory: "128Mi"

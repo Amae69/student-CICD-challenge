@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: student-ci-challenge
-        image: krizeal/my-repo:go-app_v1.0
+        image: krizeal/my-repo:go-app_v2.0
         imagePullPolicy: Always
         resources:
           limits:

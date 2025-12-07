@@ -18,12 +18,12 @@ spec:
       - name: student-ci-challenge
         image: krizeal/my-repo:go-app_v2.0
         imagePullPolicy: Always
-      imagePullSecrets:
-      - name: regcred
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
+      imagePullSecrets:
+      - name: regcred
 ---
 apiVersion: v1
 kind: Service

@@ -69,7 +69,6 @@ jobs:
     - name: Deploy to Minikube
       run: |
         kubectl apply -f k8s/deployment.yaml
-        kubectl rollout restart deployment/student-ci-challenge
 
     - name: Verify Deployment
       run: |
@@ -77,3 +76,11 @@ jobs:
         kubectl port-forward service/student-ci-challenge 8080:80 &
         sleep 10
         curl -f http://localhost:8080
+
+    - name: Debug Failure
+      if: failure()
+      run: |
+        kubectl get pods
+        kubectl describe deployment student-ci-challenge
+        kubectl describe pods -l app=student-ci-challenge
+        kubectl logs -l app=student-ci-challenge --tail=50

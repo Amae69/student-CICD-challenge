@@ -46,7 +46,7 @@ jobs:
       with:
         images: ${{ secrets.DOCKER_USERNAME }}/my-repo
         tags: |
-          type=raw,value=go-app_v1.0
+          type=raw,value=go-app_v2.0
         
     - name: Build and push Docker image
       uses: docker/build-push-action@v5

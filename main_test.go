@@ -3,7 +3,7 @@ package main
 import "testing"
 
 func TestGetMessage(t *testing.T) {
-	expected := "Hello, CI/CD World!"
+	expected := "Hello, DevelopersFoundry fellows!"
 	actual := GetMessage()
 
 	if actual != expected {

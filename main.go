@@ -7,11 +7,11 @@ import (
 )
 
 func GetMessage() string {
-	return "Hello, CI/CD World!"
+	return "Hello, DevelopersFoundry fellows!"
 }
 
 func main() {
 	c := color.New(color.FgCyan, color.Bold)
 	c.Println(GetMessage())
-	fmt.Println("Application started successfully.")
+	fmt.Println("My fellow Comrade. My Application started successfully.")
 }

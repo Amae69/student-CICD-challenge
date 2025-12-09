@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -14,5 +15,6 @@ func main() {
 			"Laptop", "Keyboard", "Phone",
 		})
 	})
+	fmt.Println("Server starting on :8080...")
 	http.ListenAndServe(":8080", nil)
 }
